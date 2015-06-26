@@ -43,11 +43,12 @@ module Scrabble
       sum = 0
       word = word.upcase
       word.split(//).each do |letter|
-        sum = sum + CONVERSIONS[letter]
+        sum += CONVERSIONS[letter]
       end
       return sum
     end
 
+    # This method returns the scores for each individual letter.
     def self.score_letters (word)
       word = word.split(//)
       value = []
@@ -55,6 +56,6 @@ module Scrabble
         value = value + ["#{letter.upcase!} = #{CONVERSIONS[letter]}"]
       end
       return value
-    end
-  end
-end
+    end # method
+  end # class
+end # module
